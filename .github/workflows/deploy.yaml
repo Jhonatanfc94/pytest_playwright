@@ -7,7 +7,7 @@ on:
 jobs:
   deploy-jhona:
     runs-on: ubuntu-latest
-    step:
+    steps:
       - run: echo "general pull"
       - run: echo "install libraries"
       - run: echo "Run tests"
