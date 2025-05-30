@@ -2,13 +2,12 @@ name: "Actions Jhona"
 
 on:
   push:
-    brances: ["main"]
+    branches: ["main"]
 
 jobs:
   deploy-jhona:
     runs-on: ubuntu-latest
     step:
-      uses: actions/checkout@v4
-      -run: echo "general pull"
-      -run: echo "install libraries"
-      -run: echo "Run tests"
+      - run: echo "general pull"
+      - run: echo "install libraries"
+      - run: echo "Run tests"
