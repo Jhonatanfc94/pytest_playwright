@@ -1,0 +1,13 @@
+name: "Actions Jhona"
+
+on:
+  push:
+    brances: ["main"]
+
+jobs:
+  deploy-jhona:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "general pull"
+      run: echo "install libraries"
+      run: echo "Run tests"
