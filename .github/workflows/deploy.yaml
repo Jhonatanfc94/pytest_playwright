@@ -5,9 +5,15 @@ on:
     branches: ["main"]
 
 jobs:
-  deploy-jhona:
+  deploy_jhona:
     runs-on: ubuntu-latest
     steps:
       - run: echo "general pull"
       - run: echo "install libraries"
       - run: echo "Run tests"
+
+  second_job:
+    needs: deploy_jhona
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "second job"
