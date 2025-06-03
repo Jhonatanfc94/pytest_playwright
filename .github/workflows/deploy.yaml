@@ -13,6 +13,7 @@ jobs:
       - run: echo "Run tests"
 
   second_job:
+    if: false
     needs: deploy_jhona
     runs-on: ubuntu-latest
     steps:
