@@ -8,9 +8,14 @@ jobs:
   deploy_jhona:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "general pull"
-      - run: echo "install libraries"
-      - run: echo "Run tests"
+      - name: Working dir
+        run: ls -al
+
+      - name: Action
+        uses: actions/checkout@v4
+
+      - name: Working after
+        run: ls -al
 
   second_job:
     if: ${{ github.ref == 'refs/heads/main' }}
