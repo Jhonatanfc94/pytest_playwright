@@ -7,6 +7,10 @@ on:
 jobs:
   deploy_jhona:
     runs-on: ubuntu-latest
+
+    outputs:
+      salida: ${{ steps.step_1.outputs.my_variable }}
+
     steps:
       - name: Working dir
         run: ls -al
@@ -25,5 +29,9 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: deploy_jhona
     runs-on: ubuntu-latest
+
+    env:
+      SALIDA: ${{ needs.deploy_jhona.outputs.salida }}
+
     steps:
-      - run: echo "second job"
+      - run: echo "$SALIDA"
