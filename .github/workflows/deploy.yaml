@@ -25,6 +25,16 @@ jobs:
       - name: message
         run: echo "${{ steps.step_1.outputs.my_variable }}"
 
+      - name: file
+        run:
+          echo "Archivo de prueba" >> test.log
+
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: archivo-test
+          path: test.log
+
   second_job:
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: deploy_jhona
